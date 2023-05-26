@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KonoGame</string>
+    <string name="play">Play</string>
+    <string name="leaderboard">See Leaderboard</string>
+    <string name="random">r</string>
+    <string name="off"></string>
+    <string name="on"></string>
+    <string name="bosisareti">0</string>
+    <string name="doluisareti">1</string>
+</resources>

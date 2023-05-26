@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7dfc2"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".GameActivity">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:onClick="initTimer"
+        android:text="Başla" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="183dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="94dp"
+        android:layout_height="30dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="66dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:background="#e7dfc2"
+        android:baselineAligned="true"
+        android:onClick="wordkontrol"
+        android:scaleType="fitCenter"
+        android:text="Sec"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="16dp"
+        android:adjustViewBounds="true"
+        android:background="#e7dfc2"
+        android:baselineAligned="true"
+        android:onClick="cleanup"
+        android:scaleType="fitCenter"
+        android:text="Silme"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="normal|bold" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ToggleButton
+                android:id="@+id/toggleButton8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:buttonTint="#FAFAFA"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/off" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton16"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton15"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton14"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton13"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton9"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton24"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton23"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton22"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton20"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton19"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton18"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton17"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton32"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton31"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton30"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton29"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton28"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton27"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton26"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton25"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton40"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton39"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton38"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton37"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton36"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton35"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton34"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton33"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton48"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton47"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton46"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton45"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton44"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton43"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton42"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton41"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton56"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton55"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton54"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton53"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton52"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton51"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton50"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton49"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton64"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton63"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+
+            <ToggleButton
+                android:id="@+id/toggleButton62"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton61"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton60"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton59"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton58"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton57"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton72"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton71"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton70"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton69"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton68"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton67"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton66"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton65"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton80"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton79"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton78"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton77"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton76"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton75"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton74"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton73"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/gamewhite"
+                android:text="@string/random"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
