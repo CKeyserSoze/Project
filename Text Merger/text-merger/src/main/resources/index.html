@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metin Birleştirme Uygulaması</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f1f1f1;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group label {
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .form-group button {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4285f4;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .form-group button:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      .metin {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        line-height: 1.5;
+      }
+
+      .metin:last-child {
+        margin-bottom: 0;
+      }
+
+      .kaydet {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .kaydet button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Metin Birleştirme Uygulaması</h1>
+      <form>
+        <div class="form-group">
+          <label for="metin1">Metin 1:</label>
+          <input type="text" id="metin1" />
+        </div>
+        <div class="form-group">
+          <label for="metin2">Metin 2:</label>
+          <input type="text" id="metin2" />
+        </div>
+        <div class="form-group">
+          <button id="metinEkle">Metin Ekle</button>
+          <button id="metinBirlestir">Metinleri Birleştir</button>
+        </div>
+        <div id="metinler"></div>
+        <div class="kaydet">
+          <button id="metinKaydet" disabled=true>Metinleri Kaydet</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const metinEkleButton = document.getElementById("metinEkle");
+      const metinBirlestirButton = document.getElementById("metinBirlestir");
+      const metinKaydetButton = document.getElementById("metinKaydet");
+      const metinlerDiv = document.getElementById("metinler");
+
+      let metinSayisi = 2; // İki varsayılan metin alanı
+
+      metinEkleButton.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Yeni bir metin alanı ekle
+        const yeniMetin = `
+                  <div class="form-group">
+                    <label for="metin${metinSayisi + 1}">Metin ${
+          metinSayisi + 1
+        }:</label>
+                    <input type="text" id="metin${metinSayisi + 1}">
+                  </div>
+                `;
+        metinlerDiv.insertAdjacentHTML("beforeend", yeniMetin);
+
+        metinSayisi++;
+      });
+
+      var obj;
+
+      metinBirlestirButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Tüm metin alanlarının değerlerini birleştir
+        let birlesmisMetin = "";
+        var text = [];
+        const metinler = document.querySelectorAll("input[type='text']");
+        metinler.forEach(function (metin) {
+          birlesmisMetin += metin.value + " ";
+          text.push(metin.value);
+        });
+
+        console.log(text);
+
+        // Gereksinimlere uygun URL oluşturma
+        const apiUrl = new URL("http://localhost:8090/merged-text");
+
+        // API'ye istek gönderme ve yanıtı işleme
+        fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: text }),
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            obj = JSON.parse(data);
+            console.log(obj);
+            metinKaydetButton.disabled = false;
+
+            // Yanıtı HTML sayfasındaki div elementine yazdırma
+            const birlesmisMetinDiv = `
+                  <div class="form-group">
+                    <label for="birlesmisMetin">Birleştirilmiş Metin :</label>
+                    <div class="metin" id="birlesmisMetin">${obj.text}</div>
+                    <label for="birlesmisMetin">Geçen Süre :</label>
+                    <div class="time" id="">${obj.time} milisaniye</div>
+                  </div>
+                `;
+            metinlerDiv.insertAdjacentHTML("beforeend", birlesmisMetinDiv);
+          });
+      });
+
+      metinKaydetButton.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        if (obj != null) {
+          // Gereksinimlere uygun URL oluşturma
+          const apiUrl = new URL("http://localhost:8090/merged-text/save");
+
+          // API'ye istek gönderme ve yanıtı işleme
+          fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(obj),
+          })
+            .then((response) => response.text())
+            .then((data) => {
+              alert(data);
+              obj = null;
+              metinKaydetButton.disabled = true;
+            });
+        } else {
+          alert("Metin birleştirmek için yeni kelimeler giriniz!");
+        }
+      });
+    </script>
+  </body>
+</html>
